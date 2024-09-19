@@ -22,7 +22,9 @@ async function getRegionMap() {
       next: {
         revalidate: 3600,
         tags: ["regions"],
-      },
+      }, headers: {
+        "x-publishable-api-key": process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
+      }
     }).then((res) => res.json())
 
     if (!regions?.length) {

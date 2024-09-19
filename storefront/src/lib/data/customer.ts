@@ -37,16 +37,15 @@ export async function signup(_currentState: unknown, formData: FormData) {
   }
 
   try {
-    const { token } = await sdk.auth.create("customer", "emailpass", {
+    await sdk.auth.register("customer", "emailpass", {
       email: customerForm.email,
       password: password,
     })
 
-    const customHeaders = { authorization: `Bearer ${token}` }
     const { customer: createdCustomer } = await sdk.store.customer.create(
       customerForm,
       {},
-      customHeaders
+        {}
     )
 
     const loginToken = await sdk.auth.login("customer", "emailpass", {
