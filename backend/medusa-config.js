@@ -8,7 +8,7 @@ const backendUrl = process.env.RAILWAY_PUBLIC_DOMAIN_VALUE || 'http://localhost:
 
 const plugins = [
   // 'medusa-fulfillment-manual',
-  'medusa-payment-manual'
+  // 'medusa-payment-manual'
 
 ];
 
