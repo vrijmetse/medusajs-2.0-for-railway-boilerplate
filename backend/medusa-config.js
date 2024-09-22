@@ -7,7 +7,7 @@ loadEnv(process.env.NODE_ENV, process.cwd());
 const backendUrl = process.env.RAILWAY_PUBLIC_DOMAIN_VALUE || 'http://localhost:9000';
 
 const plugins = [
-  'medusa-fulfillment-manual',
+  // 'medusa-fulfillment-manual',
   'medusa-payment-manual'
 
 ];
